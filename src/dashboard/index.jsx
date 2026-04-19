@@ -18,9 +18,9 @@ function Dashboard() {
   const GetResumesList=()=>{
     GlobalApi.GetUserResumes(user?.primaryEmailAddress?.emailAddress)
     .then(resp=>{
-      console.log(resp.data.data)
-      setResumeList(resp.data.data);
+      setResumeList(resp?.data?.data ?? []);
     })
+    .catch(()=>setResumeList([]))
   }
   return (
     <div className='p-10 md:px-20 lg:px-32'>

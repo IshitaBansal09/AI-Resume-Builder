@@ -42,7 +42,13 @@ const router=createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-     <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
+     <ClerkProvider
+      publishableKey={PUBLISHABLE_KEY}
+      signInUrl="/auth/sign-in"
+      signUpUrl="/auth/sign-in"
+      afterSignInUrl="/dashboard"
+      afterSignUpUrl="/dashboard"
+    >
       <RouterProvider router={router} />
     </ClerkProvider>
   </React.StrictMode>,
